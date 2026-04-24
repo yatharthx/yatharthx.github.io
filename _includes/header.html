@@ -1,5 +1,5 @@
-<header class="border-b border-border py-3">
-  <div class="max-w-3xl mx-auto px-4 flex flex-col md:flex-row md:items-center md:justify-between gap-3 md:gap-0">
+<header>
+  <div class="md:w-3xl mx-auto px-4 flex flex-col md:flex-row md:items-center md:justify-between gap-3 md:gap-0 border-b border-border py-2">
     <a class="text-sm font-mono bg-muted px-2.5 py-1.5 mx-auto md:mx-0 border border-border no-underline inline-block" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
     <nav class="flex flex-wrap justify-center md:justify-end gap-3 md:gap-6">
       {%- assign page_paths = site.header_pages | default: site.pages | map: "path" -%}
