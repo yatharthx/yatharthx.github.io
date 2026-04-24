@@ -17,3 +17,21 @@ github_username: yatharthx
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+
+collections:
+  writings:
+    output: true
+    permalink: /writings/:slug/
+  logs:
+    output: true
+    permalink: /weblog/:slug/
+
+defaults:
+  - scope:
+      path: "_writings"
+    values:
+      layout: post
+  - scope:
+      path: "_logs"
+    values:
+      layout: post

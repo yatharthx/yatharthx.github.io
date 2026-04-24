@@ -1,0 +1,41 @@
+---
+layout: default
+---
+
+<div class="post-list">
+    {%- if page.title -%}
+    <header class="post-header">
+        <h1 class="post-title">{{ page.title }}</h1>
+    </header>
+    {%- endif -%}
+
+    {{ content }}
+
+    {%- if page.collection -%}
+        {%- assign posts = site[page.collection] -%}
+    {%- else -%}
+        {%- assign posts = site.writings -%}
+    {%- endif -%}
+    {%- if posts.size > 0 -%}
+    <ul class="post-list">
+        {%- for post in posts -%}
+        {%- assign wordCount = post.content | number_of_words -%}
+        <li>
+            <div class="post-link">
+                <a href="{{ post.url | relative_url }}"
+                    >{{ post.title | escape }}</a
+                >
+                {%- if site.show_excerpts -%}
+                <p>{{ post.excerpt }}</p>
+                {%- endif -%}
+            </div>
+            <p class="post-meta">
+                <span> {{ post.date | date: "%b %-d, %Y" }} </span>
+                <span>/</span>
+                <span> {{ wordCount }} words </span>
+            </p>
+        </li>
+        {%- endfor -%}
+    </ul>
+    {%- endif -%}
+</div>
