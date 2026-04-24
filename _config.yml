@@ -8,6 +8,7 @@ title: yatharthx
 email: yatharth@hey.com
 description: a general purpose programmer
 baseurl: "" # the subpath for the site, e.g. /blog
+domain: "yatharthx.github.io"
 url: "https://yatharthx.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: yatharthx_
 github_username: yatharthx
