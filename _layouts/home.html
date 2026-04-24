@@ -2,31 +2,92 @@
 layout: default
 ---
 
-<div class="post-list">
-    {%- if page.title -%}
-    <header class="post-header">
-        <h1 class="post-title">{{ page.title }}</h1>
-    </header>
-    {%- endif -%} {{ content }} {%- if site.posts.size > 0 -%}
-    <ul class="post-list">
-        {%- for post in site.posts -%} {%- assign wordCount = post.content |
-        number_of_words -%}
-        <li>
-            <div class="post-link">
-                <a href="{{ post.url | relative_url }}"
-                    >{{ post.title | escape }}</a
-                >
-                {%- if site.show_excerpts -%}
-                <p>{{ post.excerpt }}</p>
-                {%- endif -%}
-            </div>
-            <p class="post-meta">
-                <span> {{ post.date | date: "%b %-d, %Y" }} </span>
-                <span>/</span>
-                <span> {{ wordCount }} words </span>
+<div class="max-w-3xl mx-auto px-4 pt-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 font-mono text-sm">
+        <!-- Section 1: Site Name -->
+        <div>
+            <a class="text-sm font-mono bg-muted px-2.5 py-1.5 border border-border no-underline inline-block" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+            <p class="text-foreground mt-2">{{ site.description }}</p>
+        </div>
+
+        <!-- Section 2: About -->
+        <div>
+            <p class="text-muted-foreground mb-2">About</p>
+            <p class="text-foreground">
+                A general purpose programmer building things with code.
             </p>
-        </li>
-        {%- endfor -%}
-    </ul>
-    {%- endif -%}
+        </div>
+
+        <!-- Section 3: Writings -->
+        <div>
+            <p class="text-muted-foreground mb-2">Writings</p>
+            <ul class="space-y-1">
+                <li>
+                    <a
+                        href="/writings/"
+                        class="text-foreground hover:text-primary no-underline"
+                        >Writings</a
+                    >
+                    <span class="text-muted-foreground">/</span>
+                    <a
+                        href="/weblog/"
+                        class="text-foreground hover:text-primary no-underline"
+                        >Weblog</a
+                    >
+                </li>
+            </ul>
+        </div>
+
+        <!-- Section 4: Projects -->
+        <div>
+            <p class="text-muted-foreground mb-2">Projects</p>
+            <ul class="space-y-1">
+                <li>
+                    <a
+                        href="#"
+                        class="text-foreground hover:text-primary no-underline"
+                        >Project One</a
+                </li>
+                <li>
+                    <a
+                        href="#"
+                        class="text-foreground hover:text-primary no-underline"
+                        >Project Two</a
+                </li>
+                <li>
+                    <a
+                        href="#"
+                        class="text-foreground hover:text-primary no-underline"
+                        >Project Three</a
+                </li>
+            </ul>
+        </div>
+
+        <!-- Section 5: Connect -->
+        <div>
+            <p class="text-muted-foreground mb-2">Connect</p>
+            <ul class="space-y-1">
+                <li>
+                    <a
+                        href="https://github.com/yatharthx"
+                        class="text-foreground hover:text-primary no-underline"
+                        target="_blank"
+                        >GitHub</a>
+                </li>
+                <li>
+                    <a
+                        href="https://twitter.com/yatharthx_"
+                        class="text-foreground hover:text-primary no-underline"
+                        target="_blank"
+                        >Twitter</a>
+                </li>
+                <li>
+                    <a
+                        href="mailto:yatharth@hey.com"
+                        class="text-foreground hover:text-primary no-underline"
+                        >Email</a>
+                </li>
+            </ul>
+        </div>
+    </div>
 </div>
