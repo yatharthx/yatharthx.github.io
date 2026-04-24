@@ -2,12 +2,14 @@
 layout: default
 ---
 
-<div class="max-w-3xl mx-auto px-4 pt-8">
+<div class="max-w-3xl mx-auto pt-8">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 font-mono text-sm">
-        <!-- Section 1: Site Name -->
-        <div>
-            <a class="text-sm font-mono bg-muted px-2.5 py-1.5 border border-border no-underline inline-block" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
-            <p class="text-foreground mt-2">{{ site.description }}</p>
+        <!-- Section 1: Canvas Pixel Art -->
+        <div class="">
+            <canvas
+                id="c"
+                style="display: block; width: 100%; height: 100%"
+            ></canvas>
         </div>
 
         <!-- Section 2: About -->
@@ -47,18 +49,21 @@ layout: default
                         href="#"
                         class="text-foreground hover:text-primary no-underline"
                         >Project One</a
+                    >
                 </li>
                 <li>
                     <a
                         href="#"
                         class="text-foreground hover:text-primary no-underline"
                         >Project Two</a
+                    >
                 </li>
                 <li>
                     <a
                         href="#"
                         class="text-foreground hover:text-primary no-underline"
                         >Project Three</a
+                    >
                 </li>
             </ul>
         </div>
@@ -72,22 +77,161 @@ layout: default
                         href="https://github.com/yatharthx"
                         class="text-foreground hover:text-primary no-underline"
                         target="_blank"
-                        >GitHub</a>
+                        >GitHub</a
+                    >
                 </li>
                 <li>
                     <a
                         href="https://twitter.com/yatharthx_"
                         class="text-foreground hover:text-primary no-underline"
                         target="_blank"
-                        >Twitter</a>
+                        >Twitter</a
+                    >
                 </li>
                 <li>
                     <a
                         href="mailto:yatharth@hey.com"
                         class="text-foreground hover:text-primary no-underline"
-                        >Email</a>
+                        >Email</a
+                    >
                 </li>
             </ul>
         </div>
     </div>
 </div>
+
+<script>
+    (function () {
+        const canvas = document.getElementById("c");
+        const ctx = canvas.getContext("2d");
+        const S = 10;
+        const PAD = 1;
+
+        const Y = [
+            [1, 0, 0, 0, 1],
+            [1, 0, 0, 0, 1],
+            [0, 1, 0, 1, 0],
+            [0, 0, 1, 0, 0],
+            [0, 0, 1, 0, 0],
+            [0, 0, 1, 0, 0],
+            [0, 0, 1, 0, 0],
+        ];
+        const X = [
+            [1, 0, 0, 0, 1],
+            [1, 0, 0, 0, 1],
+            [0, 1, 0, 1, 0],
+            [0, 0, 1, 0, 0],
+            [0, 1, 0, 1, 0],
+            [1, 0, 0, 0, 1],
+            [1, 0, 0, 0, 1],
+        ];
+        const GAP = 2;
+
+        function buildGlyph() {
+            const pw = Y[0].length + GAP + X[0].length;
+            const ph = Y.length;
+            const cells = [];
+            for (let r = 0; r < ph; r++) {
+                for (let c = 0; c < Y[0].length; c++)
+                    if (Y[r][c]) cells.push({ dr: r, dc: c });
+                for (let c = 0; c < X[0].length; c++)
+                    if (X[r][c])
+                        cells.push({ dr: r, dc: Y[0].length + GAP + c });
+            }
+            return { pw, ph, cells };
+        }
+        const glyph = buildGlyph();
+
+        let cols,
+            rows,
+            revealed,
+            timers = [];
+
+        function resize() {
+            const rect = canvas.parentElement.getBoundingClientRect();
+            canvas.width = rect.width;
+            canvas.height = rect.height;
+            cols = Math.floor(canvas.width / S);
+            rows = Math.floor(canvas.height / S);
+            revealed = new Float32Array(cols * rows);
+            timers.forEach((t) => clearTimeout(t));
+            timers = [];
+            draw();
+        }
+
+        function getWorldCells() {
+            const ox = Math.floor((cols - glyph.pw) / 2);
+            const oy = Math.floor((rows - glyph.ph) / 2);
+            return glyph.cells.map(({ dr, dc }) => ({
+                col: ox + dc,
+                row: oy + dr,
+            }));
+        }
+
+        function revealYX() {
+            const cells = getWorldCells().sort(() => Math.random() - 0.5);
+            timers.forEach((t) => clearTimeout(t));
+            timers = [];
+            cells.forEach((cell, i) => {
+                timers.push(
+                    setTimeout(
+                        () => {
+                            if (
+                                cell.row >= 0 &&
+                                cell.row < rows &&
+                                cell.col >= 0 &&
+                                cell.col < cols
+                            )
+                                revealed[cell.row * cols + cell.col] = 1;
+                            draw();
+                        },
+                        i * 16 + Math.random() * 55,
+                    ),
+                );
+            });
+        }
+
+        function hideYX() {
+            const cells = getWorldCells().sort(() => Math.random() - 0.5);
+            timers.forEach((t) => clearTimeout(t));
+            timers = [];
+            cells.forEach((cell, i) => {
+                timers.push(
+                    setTimeout(
+                        () => {
+                            if (
+                                cell.row >= 0 &&
+                                cell.row < rows &&
+                                cell.col >= 0 &&
+                                cell.col < cols
+                            )
+                                revealed[cell.row * cols + cell.col] = 0;
+                            draw();
+                        },
+                        i * 11 + Math.random() * 38,
+                    ),
+                );
+            });
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let r = 0; r < rows; r++) {
+                for (let c = 0; c < cols; c++) {
+                    const x = c * S + PAD;
+                    const y = r * S + PAD;
+                    const w = S - PAD * 2;
+                    ctx.fillStyle = revealed[r * cols + c]
+                        ? "#111111"
+                        : "#d9d9d9";
+                    ctx.fillRect(x, y, w, w);
+                }
+            }
+        }
+
+        canvas.addEventListener("mouseenter", () => revealYX());
+        canvas.addEventListener("mouseleave", () => hideYX());
+        new ResizeObserver(() => resize()).observe(canvas.parentElement);
+        resize();
+    })();
+</script>
