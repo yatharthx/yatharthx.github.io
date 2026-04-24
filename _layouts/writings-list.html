@@ -2,10 +2,10 @@
 layout: default
 ---
 
-<div class="post-list">
+<div>
     {%- if page.title -%}
-    <header class="post-header">
-        <h1 class="post-title">{{ page.title }}</h1>
+    <header>
+        <h1 class="text-4xl font-semibold tracking-tight mb-2">{{ page.title }}</h1>
     </header>
     {%- endif -%}
 
@@ -17,22 +17,21 @@ layout: default
         {%- assign posts = site.writings -%}
     {%- endif -%}
     {%- if posts.size > 0 -%}
-    <ul class="post-list">
+    <ul class="list-none space-y-6">
         {%- for post in posts -%}
         {%- assign wordCount = post.content | number_of_words -%}
         <li>
-            <div class="post-link">
+            <div>
                 <a href="{{ post.url | relative_url }}"
-                    >{{ post.title | escape }}</a
-                >
+                    class="text-xl font-medium text-foreground hover:text-primary no-underline">{{ post.title | escape }}</a>
                 {%- if site.show_excerpts -%}
                 <p>{{ post.excerpt }}</p>
                 {%- endif -%}
             </div>
-            <p class="post-meta">
-                <span> {{ post.date | date: "%b %-d, %Y" }} </span>
+            <p class="text-sm text-muted-foreground flex gap-3 mt-1">
+                <span>{{ post.date | date: "%b %-d, %Y" }}</span>
                 <span>/</span>
-                <span> {{ wordCount }} words </span>
+                <span>{{ wordCount }} words</span>
             </p>
         </li>
         {%- endfor -%}
