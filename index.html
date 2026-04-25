@@ -2,19 +2,44 @@
 layout: default
 title: Home
 permalink: /
+
+data:
+    writings:
+        - label: Weblog
+          url: /weblog/
+        - label: Notebook
+          url: /writings/
+    projects:
+        - label: deno-tui
+          url: "#"
+        - label: programs.rs
+          url: "#"
+        - label: dit
+          url: "#"
+    contact:
+        - label: GitHub
+          url: https://github.com/yatharthx
+          external: true
+        - label: Twitter
+          url: https://twitter.com/yatharthx_
+          external: true
+        - label: Email
+          url: mailto:yatharth@hey.com
 ---
 
 <div class="max-w-3xl mx-auto pt-8">
-    <div class="grid grid-cols-1 gap-4 md:grid-cols-2 font-mono text-sm">
+    <div
+        class="flex flex-col justify-center md:grid gap-8 md:gap-4 md:grid-cols-2 font-mono text-sm"
+    >
         {%- include components/homepage/canvas.html -%}
         <!---->
         {%- include components/homepage/about.html -%}
         <!---->
         {%- include components/homepage/writings.html -%}
         <!---->
-        {%- include components/homepage/pay_attention_illustration.html -%}
-        <!---->
         {%- include components/homepage/projects.html -%}
+        <!---->
+        {%- include components/homepage/pay_attention_illustration.html -%}
         <!---->
         {%- include components/homepage/contact.html -%}
     </div>

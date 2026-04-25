@@ -1,28 +1,10 @@
 <div class="p-2">
-    <p class="text-muted-foreground mb-2">Connect</p>
+    <p class="text-muted-foreground mb-2 text-xs uppercase">Connect</p>
+    <p class="leading-6 my-4">
+        Would love to hear from you. The best way I'd say would be to shoot me
+        an email.
+    </p>
     <ul class="space-y-1">
-        <li>
-            <a
-                href="https://github.com/yatharthx"
-                class="text-foreground hover:text-primary no-underline"
-                target="_blank"
-                >GitHub</a
-            >
-        </li>
-        <li>
-            <a
-                href="https://twitter.com/yatharthx_"
-                class="text-foreground hover:text-primary no-underline"
-                target="_blank"
-                >Twitter</a
-            >
-        </li>
-        <li>
-            <a
-                href="mailto:yatharth@hey.com"
-                class="text-foreground hover:text-primary no-underline"
-                >Email</a
-            >
-        </li>
+        {%- include components/link-list.html links=page.data.contact -%}
     </ul>
 </div>
