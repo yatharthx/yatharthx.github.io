@@ -1,0 +1,22 @@
+{
+  "name": "yatharthx.github.io",
+  "version": "0.1.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yatharthx/yatharthx.github.io.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yatharthx/yatharthx.github.io/issues"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.2.4",
+    "@tailwindcss/vite": "^4.2.4",
+    "autoprefixer": "^10.5.0",
+    "postcss": "^8.5.10",
+    "tailwindcss": "^4.2.4",
+    "vite": "^8.0.10"
+  }
+}

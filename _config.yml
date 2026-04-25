@@ -17,11 +17,6 @@ github_username: yatharthx
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-  - jekyll-tailwindcss
-
-tailwind:
-  input: assets/css/main.css
-  minify: true
 
 collections:
   writings:
