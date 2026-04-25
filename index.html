@@ -1,5 +1,21 @@
 ---
-layout: home
+layout: default
 title: Home
 permalink: /
 ---
+
+<div class="max-w-3xl mx-auto pt-8">
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2 font-mono text-sm">
+        {%- include components/homepage/canvas.html -%}
+        <!---->
+        {%- include components/homepage/about.html -%}
+        <!---->
+        {%- include components/homepage/writings.html -%}
+        <!---->
+        {%- include components/homepage/pay_attention_illustration.html -%}
+        <!---->
+        {%- include components/homepage/projects.html -%}
+        <!---->
+        {%- include components/homepage/contact.html -%}
+    </div>
+</div>
