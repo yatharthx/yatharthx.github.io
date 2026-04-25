@@ -1,2 +1,2 @@
-jekyll: bundle exec jekyll serve --livereload --port 3000
-css: node build.mjs --watch
+jekyll: jekyll serve --livereload --port 3000
+css: tailwindcss -i assets/css/input.css -o assets/css/out.css -w
