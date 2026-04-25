@@ -1,4 +1,7 @@
 @import "tailwindcss";
+@source "../_includes/**/*.html";
+@source "../_layouts/**/*.html";
+@source "../*.html";
 
 :root {
     --card: oklch(1 0 0);
