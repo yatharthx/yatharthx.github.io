@@ -136,6 +136,8 @@
 
         canvas.addEventListener("mouseenter", () => revealYX());
         canvas.addEventListener("mouseleave", () => hideYX());
+        canvas.addEventListener("touchstart", (e) => { e.preventDefault(); revealYX(); });
+        canvas.addEventListener("touchend", (e) => { e.preventDefault(); hideYX(); });
         new ResizeObserver(() => resize()).observe(canvas.parentElement);
         resize();
     })();
