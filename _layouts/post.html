@@ -1,33 +1,32 @@
 ---
 layout: default
 ---
-<article>
-  <header>
-    <h1 class="text-4xl font-semibold tracking-tight mb-2">{{ page.title | escape }}</h1>
-    <p class="text-sm text-muted-foreground flex gap-3">
-      <span>
-        <i class="ph ph-calendar-blank"></i>
-        <time datetime="{{ page.date | date_to_xmlschema }}">
-          {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-          {{ page.date | date: date_format }}
-        </time>
-      </span>
-      <span>
-        <i class="ph ph-article"></i>
-        {%- assign wordCount = content | number_of_words -%}
-        {{ wordCount }} words
-      </span>
-      {%- if page.author -%}
-      <span>{{ page.author }}</span>
-      {%- endif -%}
-    </p>
-  </header>
 
-  <div class="mt-6 font-serif text-lg leading-relaxed space-y-4">
-    {{ content }}
-  </div>
+<article class="px-4">
+    <header class="mt-8 mb-16">
+        <h1 class="text-4xl font-semibold font-mono tracking-tight mb-2">
+            {{ page.title | escape }}
+        </h1>
+        <p class="text-xs text-muted-foreground flex gap-3">
+            <span>
+                <time datetime="{{ page.date | date_to_xmlschema }}">
+                    {%- assign date_format = site.minima.date_format | default:
+                    "%b %-d, %Y" -%} {{ page.date | date: date_format }}
+                </time>
+            </span>
+            <span class="">&middot;</span>
+            <span>
+                {%- assign wordCount = content | number_of_words -%} {{
+                wordCount }} words
+            </span>
+            {%- if page.author -%}
+            <span>{{ page.author }}</span>
+            {%- endif -%}
+        </p>
+    </header>
 
-  {%- if site.disqus.shortname -%}
-    {%- include disqus_comments.html -%}
-  {%- endif -%}
+    <div class="mt-6 font-sans leading-relaxed space-y-4">{{ content }}</div>
+
+    {%- if site.disqus.shortname -%} {%- include disqus_comments.html -%} {%-
+    endif -%}
 </article>

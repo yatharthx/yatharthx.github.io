@@ -1,0 +1,36 @@
+---
+layout: default
+---
+
+<div class="max-w-3xl mx-auto pt-8 px-4">
+    {%- if page.title -%}
+    <h1 class="font-mono text-muted-foreground text uppercase">
+        {{ page.title }}
+    </h1>
+    {%- endif -%} {%- if page.description -%}
+    <p class="py-2 mb-8 text-accent-foreground">{{ page.description }}</p>
+    {%- endif -%} {%- if page.collection -%} {%- assign posts =
+    site[page.collection] -%} {%- else -%} {%- assign posts = site.notebook -%}
+    {%- endif -%} {%- if posts.size > 0 -%}
+    <ul class="mt-2">
+        {%- for post in posts -%} {%- assign wordCount = post.content |
+        number_of_words -%}
+        <li class="mb-3">
+            <a
+                href="{{ post.url | relative_url }}"
+                class="text-foreground decoration-muted-foreground underline underline-offset-2 hover:underline-offset-4 duration-100"
+                >{{ post.title | escape }}</a
+            >
+            <p class="text-xs font-mono text-muted-foreground">
+                {{ post.date | date: "%b %-d, %Y" }}
+                <span class="text-slate-300">/</span> {{ wordCount }} words
+            </p>
+        </li>
+        {%- endfor -%}
+    </ul>
+    {%- else -%}
+    <p class="font-mono text-muted-foreground text-xs uppercase">
+        [first post soon]
+    </p>
+    {%- endif -%}
+</div>

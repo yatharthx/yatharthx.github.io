@@ -16,7 +16,7 @@ github_username: yatharthx
 # Header navigation (order: left to right)
 header_pages:
   - weblog.md
-  - writings.md
+  - notebook.md
   - recommendations.html
 
 # Build settings
@@ -25,9 +25,9 @@ plugins:
   - jekyll-seo-tag
 
 collections:
-  writings:
+  notebook:
     output: true
-    permalink: /writings/:slug/
+    permalink: /notebook/:slug/
   logs:
     output: true
     permalink: /weblog/:slug/
@@ -37,7 +37,7 @@ collections:
 
 defaults:
   - scope:
-      path: "_writings"
+      path: "_notebook"
     values:
       layout: post
   - scope:
