@@ -13,6 +13,12 @@ url: "https://yatharthx.github.io" # the base hostname & protocol for your site,
 twitter_username: yatharthx_
 github_username: yatharthx
 
+# Header navigation (order: left to right)
+header_pages:
+  - weblog.md
+  - writings.md
+  - recommendations.html
+
 # Build settings
 plugins:
   - jekyll-feed
@@ -25,6 +31,9 @@ collections:
   logs:
     output: true
     permalink: /weblog/:slug/
+  recommendations:
+    output: true
+    permalink: /recommendations/:slug/
 
 defaults:
   - scope:

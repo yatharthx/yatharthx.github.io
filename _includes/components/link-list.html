@@ -1,18 +1,30 @@
-{% for link in include.links %}
-<li>
-    <a
-        href="{{ link.url }}"
-        class="text-muted-foreground underline underline-offset-2 hover:underline hover:underline-offset-4 duration-100"
-        {%
-        if
-        link.external
-        %}
-        target="_blank"
-        rel="noopener noreferrer"
-        {%
-        endif
-        %}
-        >{{ link.label }}</a
-    >
-</li>
-{% endfor %}
+{% comment %} Generic link list component. Usage: {%- include
+components/link-list.html links=site.data.blogs.tech title_key="name"
+url_key="url" -%} Usage: {%- include components/link-list.html
+links=page.data.contact -%} {# uses defaults #} Parameters: - links: array of
+link objects (required) - title_key: field for link text (default: 'label') -
+url_key: field for URL (default: 'url') - external_key: field for external flag
+(default: 'external') {% endcomment %} {% assign title_key = include.title_key |
+default: 'label' %} {% assign url_key = include.url_key | default: 'url' %} {%
+assign external_key = include.external_key | default: 'external' %}
+
+<ul>
+    {% for link in include.links %}
+    <li>
+        <a
+            href="{{ link[url_key] }}"
+            class="text-foreground decoration-muted-foreground underline underline-offset-2 hover:underline hover:underline-offset-4 duration-100"
+            {%
+            if
+            link[external_key]
+            %}
+            target="_blank"
+            rel="noopener noreferrer"
+            {%
+            endif
+            %}
+            >{{ link[title_key] }}</a
+        >
+    </li>
+    {% endfor %}
+</ul>

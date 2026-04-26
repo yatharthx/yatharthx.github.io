@@ -1,0 +1,59 @@
+- name: Dan Luu
+  url: https://danluu.com/
+
+- name: Alex Kladov
+  url: https://matklad.github.io/
+
+- name: Sean Goedecke
+  url: https://www.seangoedecke.com/
+
+- name: Rauno Freiberg
+  url: https://rauno.me/craft
+
+- name: Steve Klabnik
+  url: https://steveklabnik.com/writing/
+
+- name: Jake Archibald
+  url: https://jakearchibald.com/
+
+- name: Brendan Gregg
+  url: https://www.brendangregg.com/blog/index.html
+
+- name: Salvatore Sanfilippo
+  url: https://antirez.com/latest/0
+
+- name: Phil Eaton
+  url: https://notes.eatonphil.com/
+
+- name: Marc Brooker
+  url: https://brooker.co.za/blog/
+
+- name: Filippo Valsorda
+  url: https://words.filippo.io/
+
+- name: Russ Cox
+  url: https://research.swtch.com/
+
+- name: Nelson Elhage
+  url: https://blog.nelhage.com/
+
+- name: Will Larson
+  url: https://lethain.com/
+
+- name: Brian Cantrill
+  url: https://bcantrill.dtrace.org/
+
+- name: Martin Kleppmann
+  url: https://martin.kleppmann.com/archive.html
+
+- name: Xe Iaso
+  url: https://xeiaso.net/blog/
+
+- name: Daniel Lemire
+  url: https://lemire.me/blog/
+
+- name: Joel Spolsky
+  url: https://www.joelonsoftware.com/
+
+- name: Cam Pederson
+  url: https://campedersen.com/

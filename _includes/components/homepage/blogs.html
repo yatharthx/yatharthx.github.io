@@ -1,0 +1,27 @@
+<div class="p-2">
+    <p class="text-muted-foreground mb-2 text-xs uppercase">Blogs I Read</p>
+    <p class="leading-6 my-4 font-sans">
+        Tech and other blogs I read regularly.
+    </p>
+    <ul class="space-y-1">
+        {% assign all_blogs = site.data.blogs.tech | concat:
+        site.data.blogs.other %} {% for blog in all_blogs limit: 8 %}
+        <li>
+            <a
+                href="{{ blog.url }}"
+                class="text-muted-foreground underline underline-offset-2 hover:underline hover:underline-offset-4 duration-100"
+                target="_blank"
+                rel="noopener noreferrer"
+                >{{ blog.name }}</a
+            >
+        </li>
+        {% endfor %}
+        <li>
+            <a
+                href="/recommendations/blogs/"
+                class="text-xs text-muted-foreground hover:underline"
+                >[...]</a
+            >
+        </li>
+    </ul>
+</div>

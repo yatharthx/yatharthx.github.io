@@ -1,0 +1,28 @@
+<div class="p-2">
+    <p class="text-muted-foreground mb-2 text-xs uppercase">
+        Finds from <i>The Web</i>
+    </p>
+    <p class="leading-6 my-4 font-sans">
+        Interesting projects, reads, and cool things I found online.
+    </p>
+    <ul class="space-y-1">
+        {% for find in site.data.finds limit: 8 %}
+        <li>
+            <a
+                href="{{ find.url }}"
+                class="text-muted-foreground underline underline-offset-2 hover:underline hover:underline-offset-4 duration-100"
+                target="_blank"
+                rel="noopener noreferrer"
+                >{{ find.title | default: find.url }}</a
+            >
+        </li>
+        {% endfor %}
+        <li>
+            <a
+                href="/recommendations/finds/"
+                class="text-xs text-muted-foreground hover:underline"
+                >[...]</a
+            >
+        </li>
+    </ul>
+</div>

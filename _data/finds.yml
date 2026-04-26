@@ -1,0 +1,47 @@
+- url: https://github.com/snapview/tui-charts
+  title: tui-charts
+  author: snapview
+  description: TUI charts library for Rust
+
+- url: https://github.com/seaofvoices/sucrose
+  title: sucrose
+  author: seaofvoices
+  description: Audio visualization components
+
+- url: https://github.com/shssoichiro/console-voice
+  title: console-voice
+  author: shssoichiro
+  description: Terminal text-to-speech
+
+- url: https://github.com/terkelg/ramda
+  title: Ramda
+  author: terkelg
+  description: Functional programming library
+
+- url: https://github.com/HackerThemes/theme-machine
+  title: Theme Machine
+  author: HackerThemes
+  description: Generate VS Code color themes
+
+- url: https://phish.site
+  author: cybersecurity-oss
+  description: Phishing domain detection
+
+- url: https://github.com/leeoniya/d3-delaunay
+  title: d3-delaunay
+  author: leeoniya
+  description: Fast Delaunay lookups
+
+- url: https://beautiful.now.sh
+  author: blob-builder
+  description: CSS blob generator
+
+- url: https://github.com/huggingface/candle
+  title: Candle
+  author: huggingface
+  description: ML framework in Rust
+
+- url: https://github.com/evcxr/evcxr
+  title: Evcxr
+  author: evcxr
+  description: Rust REPL for Jupyter

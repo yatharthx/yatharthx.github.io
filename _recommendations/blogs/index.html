@@ -1,0 +1,23 @@
+---
+layout: default
+title: Recommendations / Blogs
+permalink: /recommendations/blogs/
+---
+
+<div class="max-w-3xl mx-auto pt-8 px-4">
+    <h1 class="font-mono text-muted-foreground text uppercase">Blogs I Read</h1>
+    <p class="py-2 mb-8 text-accent-foreground">
+        Blogs and newsletters I read regularly. (A more structured collection in
+        the works.)
+    </p>
+
+    <h2 class="font-mono text-muted-foreground text-sm uppercase">Tech</h2>
+    <ul class="mt-2 mb-8">
+        {%- include components/link-list.html links=site.data.blogs.tech title_key="name" url_key="url" external_key="" -%}
+    </ul>
+
+    <h2 class="font-mono text-muted-foreground text-sm uppercase">Other</h2>
+    <ul class="mt-2 mb-8">
+        {%- include components/link-list.html links=site.data.blogs.other title_key="name" url_key="url" external_key="" -%}
+    </ul>
+</div>

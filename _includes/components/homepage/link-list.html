@@ -1,0 +1,18 @@
+{% for link in include.links %}
+<li>
+    <a
+        href="{{ link.url }}"
+        class="text-muted-foreground underline underline-offset-2 hover:underline hover:underline-offset-4 duration-100"
+        {%
+        if
+        link.external
+        %}
+        target="_blank"
+        rel="noopener noreferrer"
+        {%
+        endif
+        %}
+        >{{ link.label }}</a
+    >
+</li>
+{% endfor %}

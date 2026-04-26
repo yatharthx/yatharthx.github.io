@@ -1,0 +1,32 @@
+---
+layout: default
+title: Recommendations / Finds
+permalink: /recommendations/finds/
+---
+
+<div class="max-w-3xl mx-auto pt-8 px-4">
+    <h1 class="font-mono text-muted-foreground text uppercase">
+        Interesting Finds
+    </h1>
+    <p class="py-2 mb-8 text-accent-foreground">
+        Interesting projects, reads, and cool things I found online.
+    </p>
+
+    <ul class="mt-2 mb-8 max-w-max">
+        {% for find in site.data.finds %}
+        <li class="mb-3">
+            <a
+                href="{{ find.url }}"
+                class="text-foreground decoration-muted-foreground underline underline-offset-2 hover:underline-offset-4 duration-100"
+                target="_blank"
+                rel="noopener noreferrer"
+                >{{ find.title | default: find.url }}</a
+            >
+            <p class="text-sm text-muted-foreground">
+                by {{ find.author }}{% if find.description %} &mdash; {{
+                find.description }}{% endif %}
+            </p>
+        </li>
+        {% endfor %}
+    </ul>
+</div>

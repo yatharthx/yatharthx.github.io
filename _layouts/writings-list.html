@@ -2,28 +2,26 @@
 layout: default
 ---
 
-<div>
+<div class="px-4">
     {%- if page.title -%}
     <header>
-        <h1 class="text-4xl font-semibold tracking-tight mb-2">{{ page.title }}</h1>
+        <h1 class="text-4xl font-semibold tracking-tight mb-2">
+            {{ page.title }}
+        </h1>
     </header>
-    {%- endif -%}
-
-    {{ content }}
-
-    {%- if page.collection -%}
-        {%- assign posts = site[page.collection] -%}
-    {%- else -%}
-        {%- assign posts = site.writings -%}
-    {%- endif -%}
-    {%- if posts.size > 0 -%}
+    {%- endif -%} {{ content }} {%- if page.collection -%} {%- assign posts =
+    site[page.collection] -%} {%- else -%} {%- assign posts = site.writings -%}
+    {%- endif -%} {%- if posts.size > 0 -%}
     <ul class="list-none space-y-6">
-        {%- for post in posts -%}
-        {%- assign wordCount = post.content | number_of_words -%}
+        {%- for post in posts -%} {%- assign wordCount = post.content |
+        number_of_words -%}
         <li>
             <div>
-                <a href="{{ post.url | relative_url }}"
-                    class="text-xl font-medium text-foreground hover:text-primary no-underline">{{ post.title | escape }}</a>
+                <a
+                    href="{{ post.url | relative_url }}"
+                    class="text-xl font-medium text-foreground hover:text-primary no-underline"
+                    >{{ post.title | escape }}</a
+                >
                 {%- if site.show_excerpts -%}
                 <p>{{ post.excerpt }}</p>
                 {%- endif -%}
