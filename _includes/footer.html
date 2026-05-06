@@ -1,7 +1,12 @@
 <footer>
     <div class="md:w-3xl py-6 mx-auto border-t border-border">
-        <p class="text-xs font-mono text-muted-foreground px-4">
-            &copy; {{ site.time | date: "%Y" }} {{ site.title | escape }}
-        </p>
+        <div class="flex items-center justify-between px-4">
+            <p class="text-xs font-mono text-muted-foreground">
+                &copy; {{ site.time | date: "%Y" }} {{ site.title | escape }}
+            </p>
+            <button id="dark-mode-toggle-footer" class="md:hidden text-sm text-muted-foreground hover:text-foreground no-underline cursor-pointer" aria-label="Toggle dark mode">
+                <i class="ph ph-circle-half-tilt"></i>
+            </button>
+        </div>
     </div>
 </footer>
