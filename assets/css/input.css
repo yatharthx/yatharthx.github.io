@@ -3,6 +3,8 @@
 @source "../_layouts/**/*.html";
 @source "../*.html";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
     --card: oklch(1 0 0);
     --card-foreground: oklch(0.145 0 0);
