@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 @source "../_includes/**/*.html";
 @source "../_layouts/**/*.html";
 @source "../*.html";

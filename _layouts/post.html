@@ -25,7 +25,9 @@ layout: default
         </p>
     </header>
 
-    <div class="mt-6 font-sans leading-relaxed space-y-4">{{ content }}</div>
+    <div class="mt-6 font-sans leading-relaxed space-y-4 prose text-sm dark:prose-invert">
+        {{ content }}
+    </div>
 
     {%- if site.disqus.shortname -%} {%- include disqus_comments.html -%} {%-
     endif -%}
