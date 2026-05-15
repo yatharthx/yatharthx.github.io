@@ -30,15 +30,15 @@ I’ll probably create a good resource on terminals — like a long post (or a s
 But until then, if you too are curious about the computer terminals and how they work, here is a list of resources to read and learn from.
 
 ## Getting started
-1. A bit of computing history is essential to understanding the terminals. So [*A Guide to the Terminal, Console, and Shell*](https://thevaluable.dev/guide-terminal-shell-console/) by valuable.dev is a good starting point.
-2. Next in line would be [*The TTY Demystified*](https://www.linusakesson.net/programming/tty/) by Linus Åkesson. Which also contains a bit of history but quickly moves from surface-level concepts to technical details.
+1. A bit of computing history is essential to understanding the terminals. So [A Guide to the Terminal, Console, and Shell](https://thevaluable.dev/guide-terminal-shell-console/) by valuable.dev is a good starting point.
+2. Next in line would be [The TTY Demystified](https://www.linusakesson.net/programming/tty/) by Linus Åkesson. Which also contains a bit of history but quickly moves from surface-level concepts to technical details.
 
 That’s it. You can stop right there and you’d still know more about terminals than most developers around you.
 
 ## Diving deep
 The road ahead gets a bit more systems-y. So if that’s your thing or you’re innately curious to go a level down to understand things much better, below are the resources for that.
 
-1. [*GNU/Linux shell related internals for SRE*](https://biriukov.dev/docs/fd-pipe-session-terminal/0-sre-should-know-about-gnu-linux-shell-related-internals-file-descriptors-pipes-terminals-user-sessions-process-groups-and-daemons/) by Viacheslav Biriukov.\
+1. [GNU/Linux shell related internals for SRE](https://biriukov.dev/docs/fd-pipe-session-terminal/0-sre-should-know-about-gnu-linux-shell-related-internals-file-descriptors-pipes-terminals-user-sessions-process-groups-and-daemons/) by Viacheslav Biriukov.\
 	 This thing is pretty good. It’s a 4-part series that starts with Linux file descriptors and explains *pipes* and *processes* on the way to finally get to the terminals. Good stuff.
 2. Aram Drevekenin (who’s an indie software developer) has been writing extensively about his project *Zellij*. If you haven’t heard about it, you should [check it out](https://zellij.dev/)!\
 	 Here are a couple of posts on how Zellij is built, the technology involved and other things.
