@@ -27,10 +27,10 @@ plugins:
 collections:
   notebook:
     output: true
-    permalink: /notebook/:slug/
+    permalink: /writing/notebook/:slug/
   logs:
     output: true
-    permalink: /weblog/:slug/
+    permalink: /writing/weblog/:slug/
   recommendations:
     output: true
     permalink: /recommendations/:slug/

@@ -23,9 +23,20 @@ layout: default
             <span>{{ page.author }}</span>
             {%- endif -%}
         </p>
+        <p class="text-xs text-muted-foreground flex gap-2 flex-wrap mt-3">
+            {%- if page.tags.size > 0 -%} {%- for tag in page.tags -%}
+            <a
+                href="/writing/tags/{{ tag | slugify }}/"
+                class="bg-black text-white dark:bg-white dark:text-black px-2 py-0.5 text-xs font-mono no-underline hover:opacity-80 duration-100"
+                >{{ tag }}</a
+            >
+            {%- endfor -%} {%- endif -%}
+        </p>
     </header>
 
-    <div class="mt-6 font-sans leading-relaxed space-y-4 prose text-sm dark:prose-invert">
+    <div
+        class="mt-6 font-sans leading-relaxed space-y-4 prose text-sm dark:prose-invert"
+    >
         {{ content }}
     </div>
 

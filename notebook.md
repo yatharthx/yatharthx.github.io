@@ -1,7 +1,7 @@
 ---
 layout: writings
 title: Notebook
-permalink: /notebook/
+permalink: /writing/notebook/
 collection: notebook
 description: More thought-out and structured writeups
 ---

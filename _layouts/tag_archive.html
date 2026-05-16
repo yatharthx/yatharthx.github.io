@@ -1,0 +1,42 @@
+---
+layout: default
+---
+
+<div class="max-w-3xl mx-auto pt-8 px-4">
+    <h1 class="font-mono text-muted-foreground text uppercase mb-8">
+        Tag: {{ page.tag }}
+    </h1>
+
+    {%- if page.posts.size > 0 -%}
+    <ul class="mt-2">
+        {%- for post in page.posts -%} {%- assign wordCount = post.content |
+        number_of_words -%}
+        <li class="mb-9">
+            <p class="text-xs font-mono text-muted-foreground flex gap-2">
+                {{ post.date | date: "%b %-d, %Y" }}
+                <span class="text-slate-300">/</span> {{ wordCount }} words {%-
+                if post.tags.size > 0 -%}
+            </p>
+            <a
+                href="{{ post.url | relative_url }}"
+                class="text-foreground decoration-muted-foreground underline underline-offset-2 hover:underline-offset-4 duration-100"
+                >{{ post.title | escape }}</a
+            >
+            <p class="flex gap-2 py-2">
+                {%- for tag in post.tags -%}
+                <a
+                    href="/writing/tags/{{ tag | slugify }}/"
+                    class="bg-black text-white dark:bg-white dark:text-black px-1.5 py-0.5 text-xs font-mono no-underline hover:opacity-80 duration-100"
+                    >{{ tag }}</a
+                >
+                {%- endfor -%} {%- endif -%}
+            </p>
+        </li>
+        {%- endfor -%}
+    </ul>
+    {%- else -%}
+    <p class="font-mono text-muted-foreground text-xs uppercase">
+        [no posts with this tag]
+    </p>
+    {%- endif -%}
+</div>

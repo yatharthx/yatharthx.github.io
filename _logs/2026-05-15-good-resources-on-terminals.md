@@ -3,6 +3,10 @@ layout: post
 title: "Good resources to learn about terminals"
 data: 2026-05-15 20:23:00 +0530
 categories: programming
+tags:
+  - terminals
+  - programming
+  - resources
 ---
 
 Terminals have fascinated me ever since I got into programming.
