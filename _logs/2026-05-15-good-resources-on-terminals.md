@@ -39,7 +39,7 @@ That’s it. You can stop right there and you’d still know more about terminal
 The road ahead gets a bit more systems-y. So if that’s your thing or you’re innately curious to go a level down to understand things much better, below are the resources for that.
 
 1. [GNU/Linux shell related internals for SRE](https://biriukov.dev/docs/fd-pipe-session-terminal/0-sre-should-know-about-gnu-linux-shell-related-internals-file-descriptors-pipes-terminals-user-sessions-process-groups-and-daemons/) by Viacheslav Biriukov.\
-	 This thing is pretty good. It’s a 4-part series that starts with Linux file descriptors and explains *pipes* and *processes* on the way to finally get to the terminals. Good stuff.
+	 This thing is pretty nice. It’s a 4-part series that starts with Linux file descriptors and explains *pipes* and *processes* on the way to finally get to the terminals. Good stuff.
 2. Aram Drevekenin (who’s an indie software developer) has been writing extensively about his project *Zellij*. If you haven’t heard about it, you should [check it out](https://zellij.dev/)!\
 	 Here are a couple of posts on how Zellij is built, the technology involved and other things.
 	 - [Anatomy of a Terminal Emulator](https://poor.dev/blog/terminal-anatomy/)
@@ -49,11 +49,13 @@ The road ahead gets a bit more systems-y. So if that’s your thing or you’re 
 ## OpenTUI
 Finally, the newest thing in the world of TUIs — OpenTUI.
 
-OpenTUI is a framework from [Dax](https://thdxr.com/) and the amazing folks at [Anomaly](https://anoma.ly/) for building terminal apps in TypeScript. Under the hood, it’s powered by a Zig core for performance. It even has bindings for React and Solid, which makes the developer experience surprisingly sweet. 
+OpenTUI is a framework (from [Dax](https://thdxr.com/) and other amazing people at [Anomaly](https://anoma.ly/)) for building terminal apps in TypeScript. Under the hood, it’s powered by a Zig core for optimized and performant rendering in the terminal. It even has bindings for React and Solid, which makes the developer experience surprisingly sweet. 
 
-Every time I visit its website (docs, esp) or browse through the codebase, I can’t help admiring the engineering behind it. An absolute marvel, imo. There’s so much to learn there — technical decisions, system design, attention to DX and all other tiny details.
+Beautiful engineering, imo.
 
-And if you’d like to understand how it all works internally, Simon Klee — one of the people working on OpenTUI — wrote a wonderfully detailed and interactive post on [how OpenTUI works](https://simonklee.dk/static/lab/opentui-explained/). It explains TTYs to a good extent and then dives deep into the algorithms at work in OpenTUI.
+It’s hard to find software today that’s designed and built with such care and attention. Good thing, there!
+
+If you’d like to understand how it all works internally, Simon Klee — one of the people working on OpenTUI — wrote a wonderfully detailed and interactive post on [how OpenTUI works](https://simonklee.dk/static/lab/opentui-explained/). It covers TTYs to a good extent and then dives deep into the algorithm that powers OpenTUI.
 
 ---
 
