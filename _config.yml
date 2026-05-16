@@ -21,7 +21,6 @@ header_pages:
 
 # Build settings
 plugins:
-  - jekyll-feed
   - jekyll-seo-tag
 
 collections:
