@@ -229,7 +229,24 @@ pre code {
 .highlight .vi { color: #38bdf8; }
 .highlight .il { color: #38bdf8; }
 
+@font-face {
+    font-family: 'Departure Mono';
+    src: url('/assets/fonts/DepartureMono-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@keyframes gradient-shift {
+    0% { background-position: 30% 50%; }
+    25% { background-position: 70% 30%; }
+    50% { background-position: 60% 70%; }
+    75% { background-position: 30% 60%; }
+    100% { background-position: 30% 50%; }
+}
+
 /* Mobile responsive */
+
 @media screen and (max-width: 600px) {
     header > div {
         flex-direction: column;
