@@ -1,0 +1,39 @@
+---
+import Default from './Default.astro';
+
+export interface Props {
+  title: string;
+  description?: string;
+  tags: { name: string; count: number }[];
+}
+
+const { title, description, tags } = Astro.props;
+---
+
+<Default title={`${title} | yatharthx`} description={description}>
+  <div class="max-w-3xl mx-auto pt-8 px-4">
+    <h1 class="font-mono text-muted-foreground text uppercase mb-8">
+      {title}
+    </h1>
+
+    {
+      tags.length > 0 ? (
+        <ul class="space-y-2">
+          {tags.map(({ name, count }) => (
+            <li>
+              <a
+                href={`/writing/tags/${name}/`}
+                class="text-foreground decoration-muted-foreground underline underline-offset-2 hover:underline-offset-4 duration-100"
+              >{name}</a>
+              <span class="text-xs text-muted-foreground font-mono"> ({count})</span>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p class="font-mono text-muted-foreground text-xs uppercase">
+          [no tags yet]
+        </p>
+      )
+    }
+  </div>
+</Default>

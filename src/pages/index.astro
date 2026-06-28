@@ -1,0 +1,29 @@
+---
+import Default from '../layouts/Default.astro';
+import CanvasLogo from '../components/react/CanvasLogo';
+import About from '../components/About.astro';
+import HomeWritings from '../components/HomeWritings.astro';
+import Projects from '../components/Projects.astro';
+import PayAttentionIllustration from '../components/PayAttentionIllustration.astro';
+import Blogs from '../components/Blogs.astro';
+import Finds from '../components/Finds.astro';
+import Contact from '../components/Contact.astro';
+---
+
+<Default title="yatharthx">
+  <div class="max-w-3xl mx-auto pt-8 px-2">
+    <div class="flex flex-col justify-center md:grid gap-8 md:gap-4 md:grid-cols-2 font-mono">
+      <CanvasLogo client:load />
+      <About />
+      <HomeWritings />
+      <Projects />
+      <PayAttentionIllustration />
+      <Blogs />
+      <Finds />
+      <div class="col-span-2 py-12 text-center text-2xl">
+        <i class="ph ph-fill ph-robot"></i>
+      </div>
+      <Contact />
+    </div>
+  </div>
+</Default>

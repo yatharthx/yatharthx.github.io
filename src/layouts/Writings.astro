@@ -1,0 +1,57 @@
+---
+import Default from './Default.astro';
+import type { CollectionEntry } from 'astro:content';
+
+export interface Props {
+  title: string;
+  description?: string;
+  posts: CollectionEntry<'logs'>[] | CollectionEntry<'notebook'>[];
+}
+
+const { title, description, posts } = Astro.props;
+
+const dateFormat: Intl.DateTimeFormatOptions = {
+  month: 'short',
+  day: 'numeric',
+  year: 'numeric',
+};
+---
+
+<Default title={`${title} | yatharthx`} description={description}>
+  <div class="max-w-3xl mx-auto pt-8 px-4">
+    <h1 class="font-mono text-muted-foreground text uppercase">
+      {title}
+    </h1>
+    {
+      description && (
+        <p class="py-2 mb-8 text-accent-foreground">{description}</p>
+      )
+    }
+    {
+      posts.length > 0 ? (
+        <ul class="mt-2">
+          {posts.map((post) => {
+            const wordCount = post.body ? post.body.split(/\s+/).filter(Boolean).length : 0;
+            return (
+              <li class="mb-3">
+                <a
+                  href={`/writing/${post.collection === 'logs' ? 'weblog' : 'notebook'}/${post.id}/`}
+                  class="text-foreground decoration-muted-foreground underline underline-offset-2 hover:underline-offset-4 duration-100"
+                >{post.data.title}</a>
+                <p class="text-xs font-mono text-muted-foreground">
+                  {post.data.date.toLocaleDateString('en-US', dateFormat)}
+                  <span class="text-slate-300"> / </span>
+                  {wordCount} words
+                </p>
+              </li>
+            );
+          })}
+        </ul>
+      ) : (
+        <p class="font-mono text-muted-foreground text-xs uppercase">
+          [first post soon]
+        </p>
+      )
+    }
+  </div>
+</Default>

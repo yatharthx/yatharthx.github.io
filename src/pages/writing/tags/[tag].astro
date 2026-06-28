@@ -1,0 +1,33 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../../layouts/TagArchive.astro';
+
+export async function getStaticPaths() {
+  const logs = await getCollection('logs');
+  const notebook = await getCollection('notebook');
+  const allPosts = [...logs, ...notebook];
+
+  const tagPosts = new Map<string, typeof allPosts>();
+  for (const post of allPosts) {
+    if (post.data.tags) {
+      for (const tag of post.data.tags) {
+        const existing = tagPosts.get(tag) || [];
+        existing.push(post);
+        tagPosts.set(tag, existing);
+      }
+    }
+  }
+
+  return Array.from(tagPosts.entries()).map(([tag, posts]) => ({
+    params: { tag },
+    props: {
+      tag,
+      posts: posts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime()),
+    },
+  }));
+}
+
+const { tag, posts } = Astro.props;
+---
+
+<Layout tag={tag} posts={posts} />

@@ -1,0 +1,19 @@
+---
+export interface Props {
+  links: { label: string; url: string; external?: boolean }[];
+}
+
+const { links } = Astro.props;
+---
+
+<ul>
+  {links.map((link) => (
+    <li>
+      <a
+        href={link.url}
+        class="text-foreground decoration-muted-foreground underline underline-offset-2 hover:underline hover:underline-offset-4 duration-100"
+        {link.external && 'target="_blank" rel="noopener noreferrer"'}
+      >{link.label}</a>
+    </li>
+  ))}
+</ul>

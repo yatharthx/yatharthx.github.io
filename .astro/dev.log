@@ -1,0 +1,158 @@
+{"message":"connected.","label":"vite","level":"info"}
+{"message":"Generated 0ms","label":"types","level":"info"}
+{"message":"connected.","label":"vite","level":"info"}
+{"message":"Syncing content","label":"content","level":"info"}
+{"message":"No files found matching \"**/*.{md,mdx}\" in directory \"src/content/notebook\"","label":"glob-loader","level":"warn"}
+{"message":"Synced content","label":"content","level":"info"}
+{"message":"Re-optimizing dependencies because vite config has changed","label":"vite","level":"info"}
+{"message":" astro  v7.0.3 ready in 740 ms\n┃ Local    http://localhost:4321/\n┃ Network  http://192.168.0.111:4321/","label":"SKIP_FORMAT","level":"info"}
+{"message":"watching for file changes...","label":null,"level":"info"}
+{"message":"[200] /writing/weblog/ 93ms","label":null,"level":"info"}
+{"message":"A `getStaticPaths()` route pattern was matched, but no matching static path was found for requested path `/writing/weblog/terminals/`.\n\nPossible dynamic routes being matched: src/pages/writing/weblog/[...slug].astro.","label":"router","level":"warn"}
+Invalid DOM property `class`. Did you mean `className`?
+{"message":"[404] /writing/weblog/terminals/ 23ms","label":null,"level":"info"}
+{"message":"A `getStaticPaths()` route pattern was matched, but no matching static path was found for requested path `/writing/weblog/good-resources/`.\n\nPossible dynamic routes being matched: src/pages/writing/weblog/[...slug].astro.","label":"router","level":"warn"}
+{"message":"[404] /writing/weblog/good-resources/ 1ms","label":null,"level":"info"}
+{"message":"[200] / 9ms","label":null,"level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"An error happened during full reload\nFailed to load url astro:server-app.js (resolved id: astro:server-app.js). Does the file exist?\nError: Failed to load url astro:server-app.js (resolved id: astro:server-app.js). Does the file exist?\n    at loadAndTransform (file:///Users/yatharth.khatri/space/projects/yatharthx.github.io/node_modules/vite/dist/node/chunks/node.js:19714:31)","label":"vite","level":"error"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"A `getStaticPaths()` route pattern was matched, but no matching static path was found for requested path `/writing/weblog/2026-05-15-good-resources-on-terminals/`.\n\nPossible dynamic routes being matched: src/pages/writing/weblog/[...slug].astro.","label":"router","level":"warn"}
+{"message":"[404] /writing/weblog/2026-05-15-good-resources-on-terminals/ 11ms","label":null,"level":"info"}
+{"message":"A `getStaticPaths()` route pattern was matched, but no matching static path was found for requested path `/writing/weblog/good-resources-on-terminals/`.\n\nPossible dynamic routes being matched: src/pages/writing/weblog/[...slug].astro.","label":"router","level":"warn"}
+{"message":"[404] /writing/weblog/good-resources-on-terminals/ 2ms","label":null,"level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"Syncing content","label":"content","level":"info"}
+{"message":"Content config changed","label":"content","level":"info"}
+{"message":"Clearing content store","label":"content","level":"info"}
+{"message":"No files found matching \"**/*.{md,mdx}\" in directory \"src/content/notebook\"","label":"glob-loader","level":"warn"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"Synced content","label":"content","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"_includes/components/homepage/about.html","label":"watch","level":"info"}
+{"message":"_includes/components/homepage/blogs.html","label":"watch","level":"info"}
+{"message":"_includes/components/homepage/canvas.html","label":"watch","level":"info"}
+{"message":"_includes/components/homepage/contact.html","label":"watch","level":"info"}
+{"message":"_includes/components/homepage/finds.html","label":"watch","level":"info"}
+{"message":"_includes/components/homepage/link-list.html","label":"watch","level":"info"}
+{"message":"_includes/components/homepage/pay_attention_illustration.html","label":"watch","level":"info"}
+{"message":"_includes/components/homepage/projects.html","label":"watch","level":"info"}
+{"message":"_includes/components/homepage/writings.html","label":"watch","level":"info"}
+{"message":"_includes/components/link-list.html","label":"watch","level":"info"}
+{"message":"_includes/footer.html","label":"watch","level":"info"}
+{"message":"_includes/head.html","label":"watch","level":"info"}
+{"message":"_includes/header.html","label":"watch","level":"info"}
+{"message":"_layouts/default.html","label":"watch","level":"info"}
+{"message":"_layouts/page.html","label":"watch","level":"info"}
+{"message":"_layouts/post.html","label":"watch","level":"info"}
+{"message":"_layouts/tag_archive.html","label":"watch","level":"info"}
+{"message":"_layouts/tags.html","label":"watch","level":"info"}
+{"message":"_layouts/writings.html","label":"watch","level":"info"}
+{"message":"_recommendations/blogs/index.html","label":"watch","level":"info"}
+{"message":"_recommendations/finds/index.html","label":"watch","level":"info"}
+{"message":"assets/css/index.html","label":"watch","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"_site/index.html","label":"watch","level":"info"}
+{"message":"_site/recommendations.html","label":"watch","level":"info"}
+{"message":"_site/404.html","label":"watch","level":"info"}
+{"message":"_site/recommendations/blogs/index.html","label":"watch","level":"info"}
+{"message":"_site/recommendations/finds/index.html","label":"watch","level":"info"}
+{"message":"_site/assets/css/index.html","label":"watch","level":"info"}
+{"message":"_site/writing/tags/index.html","label":"watch","level":"info"}
+{"message":"_site/writing/tags/terminals/index.html","label":"watch","level":"info"}
+{"message":"_site/writing/tags/resources/index.html","label":"watch","level":"info"}
+{"message":"_site/writing/tags/programming/index.html","label":"watch","level":"info"}
+{"message":"_site/writing/weblog/index.html","label":"watch","level":"info"}
+{"message":"_site/writing/weblog/good-resources-on-terminals/index.html","label":"watch","level":"info"}
+{"message":"_site/writing/notebook/index.html","label":"watch","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}
+{"message":"program reload","label":"vite","level":"info"}

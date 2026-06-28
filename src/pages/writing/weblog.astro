@@ -1,0 +1,10 @@
+---
+import Layout from '../../layouts/Writings.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('logs')).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
+---
+
+<Layout title="Weblog" description="A more frequent log of things I learn and come across" posts={posts} />
