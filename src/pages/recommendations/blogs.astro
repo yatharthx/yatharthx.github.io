@@ -1,0 +1,41 @@
+---
+import Default from '../../layouts/Default.astro';
+import { techBlogs, otherBlogs } from '../../data/blogs';
+---
+
+<Default title="Recommendations / Blogs | yatharthx">
+  <div class="max-w-3xl mx-auto pt-8 px-4">
+    <h1 class="font-mono text-muted-foreground text uppercase">Blogs I Read</h1>
+    <p class="py-2 mb-8 text-accent-foreground">
+      Blogs and newsletters I read regularly. (A more structured collection in the works.)
+    </p>
+
+    <h2 class="font-mono text-muted-foreground text-sm uppercase">Tech</h2>
+    <ul class="mt-2 mb-8">
+      {techBlogs.map((blog) => (
+        <li>
+          <a
+            href={blog.url}
+            class="text-foreground decoration-muted-foreground underline underline-offset-2 hover:underline-offset-4 duration-100"
+            target="_blank"
+            rel="noopener noreferrer"
+          >{blog.name}</a>
+        </li>
+      ))}
+    </ul>
+
+    <h2 class="font-mono text-muted-foreground text-sm uppercase">Other</h2>
+    <ul class="mt-2 mb-8">
+      {otherBlogs.map((blog) => (
+        <li>
+          <a
+            href={blog.url}
+            class="text-foreground decoration-muted-foreground underline underline-offset-2 hover:underline-offset-4 duration-100"
+            target="_blank"
+            rel="noopener noreferrer"
+          >{blog.name}</a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</Default>

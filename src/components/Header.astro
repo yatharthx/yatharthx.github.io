@@ -1,0 +1,15 @@
+---
+import DarkModeToggle from './react/DarkModeToggle';
+---
+
+<header>
+  <div class="md:w-3xl mx-auto px-4 flex flex-col md:flex-row md:items-center md:justify-between gap-3 md:gap-0 border-b border-border py-2">
+    <a class="text-sm font-mono bg-muted px-2.5 py-1.5 mx-auto md:mx-0 border border-border no-underline inline-block" rel="author" href="/">yatharthx</a>
+    <nav class="flex flex-wrap justify-center md:justify-end gap-3 md:gap-6 items-center">
+      <a class="text-sm text-muted-foreground hover:text-foreground no-underline" href="/writing/weblog/">Weblog</a>
+      <a class="text-sm text-muted-foreground hover:text-foreground no-underline" href="/writing/notebook/">Notebook</a>
+      <a class="text-sm text-muted-foreground hover:text-foreground no-underline" href="/recommendations/">Recommendations</a>
+      <DarkModeToggle client:load id="dark-mode-toggle-header" class="hidden md:inline-block" />
+    </nav>
+  </div>
+</header>

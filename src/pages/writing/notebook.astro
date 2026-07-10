@@ -1,0 +1,10 @@
+---
+import Layout from '../../layouts/Writings.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('notebook')).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
+---
+
+<Layout title="Notebook" description="More thought-out and structured writeups" posts={posts} />

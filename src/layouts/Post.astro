@@ -1,0 +1,55 @@
+---
+import Default from './Default.astro';
+import type { CollectionEntry } from 'astro:content';
+
+export interface Props {
+  post: CollectionEntry<'logs'> | CollectionEntry<'notebook'>;
+  Content: (props?: Record<string, never>) => any;
+}
+
+const { post, Content } = Astro.props;
+const { title, date, tags } = post.data;
+
+const dateFormat: Intl.DateTimeFormatOptions = {
+  month: 'short',
+  day: 'numeric',
+  year: 'numeric',
+};
+
+const wordCount = post.body ? post.body.split(/\s+/).filter(Boolean).length : 0;
+---
+
+<Default title={`${title} | yatharthx`}>
+  <article class="px-4">
+    <header class="mt-8 mb-16">
+      <h1 class="text-4xl font-semibold font-mono tracking-tight mb-2">
+        {title}
+      </h1>
+      <p class="text-xs text-muted-foreground flex gap-3">
+        <span>
+          <time datetime={date.toISOString()}>
+            {date.toLocaleDateString('en-US', dateFormat)}
+          </time>
+        </span>
+        <span>&middot;</span>
+        <span>{wordCount} words</span>
+      </p>
+      {
+        tags && tags.length > 0 && (
+          <p class="text-xs text-muted-foreground flex gap-2 flex-wrap mt-3">
+            {tags.map((tag) => (
+              <a
+                href={`/writing/tags/${tag}/`}
+                class="bg-black text-white dark:bg-white dark:text-black px-2 py-0.5 text-xs font-mono no-underline hover:opacity-80 duration-100"
+              >{tag}</a>
+            ))}
+          </p>
+        )
+      }
+    </header>
+
+    <div class="mt-6 font-sans leading-relaxed space-y-4 prose text-sm dark:prose-invert">
+      <Content />
+    </div>
+  </article>
+</Default>

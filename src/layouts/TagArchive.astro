@@ -1,0 +1,64 @@
+---
+import Default from './Default.astro';
+import type { CollectionEntry } from 'astro:content';
+
+export interface Props {
+  tag: string;
+  posts: (CollectionEntry<'logs'> | CollectionEntry<'notebook'>)[];
+}
+
+const { tag, posts } = Astro.props;
+
+const dateFormat: Intl.DateTimeFormatOptions = {
+  month: 'short',
+  day: 'numeric',
+  year: 'numeric',
+};
+---
+
+<Default title={`Tag: ${tag} | yatharthx`}>
+  <div class="max-w-3xl mx-auto pt-8 px-4">
+    <h1 class="font-mono text-muted-foreground text uppercase mb-8">
+      Tag: {tag}
+    </h1>
+
+    {
+      posts.length > 0 ? (
+        <ul class="mt-2">
+          {posts.map((post) => {
+            const wordCount = post.body ? post.body.split(/\s+/).filter(Boolean).length : 0;
+            return (
+              <li class="mb-9">
+                <p class="text-xs font-mono text-muted-foreground flex gap-2">
+                  {post.data.date.toLocaleDateString('en-US', dateFormat)}
+                  <span class="text-slate-300">/</span>
+                  {wordCount} words
+                </p>
+                <a
+                  href={`/writing/${post.collection === 'logs' ? 'weblog' : 'notebook'}/${post.id}/`}
+                  class="text-foreground decoration-muted-foreground underline underline-offset-2 hover:underline-offset-4 duration-100"
+                >{post.data.title}</a>
+                {
+                  post.data.tags && post.data.tags.length > 0 && (
+                    <p class="flex gap-2 py-2">
+                      {post.data.tags.map((t) => (
+                        <a
+                          href={`/writing/tags/${t}/`}
+                          class="bg-black text-white dark:bg-white dark:text-black px-1.5 py-0.5 text-xs font-mono no-underline hover:opacity-80 duration-100"
+                        >{t}</a>
+                      ))}
+                    </p>
+                  )
+                }
+              </li>
+            );
+          })}
+        </ul>
+      ) : (
+        <p class="font-mono text-muted-foreground text-xs uppercase">
+          [no posts with this tag]
+        </p>
+      )
+    }
+  </div>
+</Default>

@@ -1,0 +1,24 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../../layouts/Tags.astro';
+
+const logs = await getCollection('logs');
+const notebook = await getCollection('notebook');
+
+const allPosts = [...logs, ...notebook];
+
+const tagCounts = new Map<string, number>();
+for (const post of allPosts) {
+  if (post.data.tags) {
+    for (const tag of post.data.tags) {
+      tagCounts.set(tag, (tagCounts.get(tag) || 0) + 1);
+    }
+  }
+}
+
+const tags = Array.from(tagCounts.entries())
+  .map(([name, count]) => ({ name, count }))
+  .sort((a, b) => a.name.localeCompare(b.name));
+---
+
+<Layout title="Tags" description="All tags used across posts" tags={tags} />
