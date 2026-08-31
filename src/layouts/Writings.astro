@@ -36,7 +36,7 @@ const dateFormat: Intl.DateTimeFormatOptions = {
               <li class="mb-3">
                 <a
                   href={`/writing/${post.collection === 'logs' ? 'weblog' : 'notebook'}/${post.id}/`}
-                  class="text-foreground decoration-muted-foreground underline underline-offset-2 hover:underline-offset-4 duration-100"
+                  class="text-muted-foreground underline underline-offset-2 hover:underline-offset-4 duration-100"
                 >{post.data.title}</a>
                 <p class="text-xs font-mono text-muted-foreground">
                   {post.data.date.toLocaleDateString('en-US', dateFormat)}
